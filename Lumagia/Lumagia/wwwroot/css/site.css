@@ -1,0 +1,500 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Baskervville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,400;1,200;1,300&display=swap');
+
+/*
+
+:ROOT -> utilizado para armazenar variaveis
+
+' * ' -> para abranger todos os elementos no body
+
+Webkit -> evitar usar
+
+*/
+
+:Root {
+    --animation-btn-nav: linear 0.5s;
+    --animation-card: ease-in-out 0.8s;
+    --text-font-scnd: 'Source Code Pro';
+    --text-font-frst: 'Baskervville';
+    --Camlhanbeque:;
+    --ferrari: #383838;
+    --ford: #141414;
+    --Sedaan: #f2f3f4;
+    --Shadow: #e2e0e077;
+}
+
+@keyframes cursorAnim {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(.7);
+    }
+}
+
+@keyframes cursorAnim2 {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(.4);
+    }
+}
+
+@keyframes cursorAnim3 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(3);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes FadeInPices {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+
+* { /*Mouse Cursor*/
+    cursor: url('/images/Triquetra.png'),auto;
+}
+
+.modal .btn:hover,
+.modal h5:hover,
+.modal i:hover,
+.modal object:hover,
+.modal img:hover {
+    cursor: url('/images/Triquetra.png'),auto;
+}
+
+.modal-body img {
+    width: auto;
+    height: 65vw;
+    max-height: 300px;
+}
+
+.modal, .modal-content {
+    background: rgba(167, 164, 164, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.modal-body {
+    background: rgba(167, 164, 164, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+object {
+    width: 100%;
+    height: 65vw;
+    max-height: 650px;
+    cursor: url('/images/Triquetra.png'),auto;
+    border-radius: 20px;
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #383838;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    animation: cursorAnim .5s infinite alternate;
+}
+
+    .cursor::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        border: 8px solid #707070;
+        border-radius: 50%;
+        opacity: .5;
+        top: -1px;
+        left: -1px;
+        animation: cursorAnim2 .5s infinite alternate;
+    }
+
+
+
+.aumtd {
+    animation: cursorAnim3 .5s forwards;
+    border: 1px solid turquoise;
+}
+
+body {
+    background-color: var(--Sedaan);
+    margin: 0;
+    height: 100vh;
+}
+
+#cover {
+    background-image: url("/images/forest.jpg");
+    position: absolute;
+    top: -15%;
+    left: 10%;
+    max-width: 90%;
+    overflow: hidden;
+    opacity: 0.2;
+}
+
+#test {
+    border-radius: 0px 80px 0px 40px;
+}
+
+#extra {
+    color: var(--ferrari);
+}
+
+#extra2 {
+    color: var(--Camlhanbeque);
+    font-size: 2vw;
+}
+
+
+/*Video/ Embed */
+
+#logo_Embed {
+    background-color: transparent;
+    position: relative;
+    margin-top: 10px;
+    align-items: center;
+}
+
+#Embed_Frame {
+    margin-left: 5vw;
+}
+
+#btn_Modal_Embed {
+    position: absolute;
+    top: 86%;
+    left: 5%;
+}
+
+
+/*Sidebar*/
+
+#Side_Bar {
+    background-color: transparent;
+    position: absolute;
+    top: 20%;
+    left: 0.2vw;
+    text-decoration: none;
+    font-size: 1.5vw;
+}
+
+.Sep {
+    background-color: var(--Camlhanbeque);
+    width: 8vw;
+    margin-top: 5px;
+    margin-left: 3px;
+    text-align: center;
+}
+
+.nav-link {
+    color: var(--ford);
+    font-family: var(--text-font-frst);
+    text-decoration: none;
+}
+
+    .nav-link.active,
+    .nav-link.active > .nav-item {
+        background: var(--ferrari);
+        margin-left: 16px;
+        pointer-events: none;
+        cursor: default;
+        pointer-events: none;
+    }
+
+
+.Sep:hover {
+    background: rgba(167, 164, 164, 0.15);
+    border-radius: 0px 10px 10px 0px;
+    margin-left: 16px;
+    transition: var(--animation-btn-nav);
+}
+
+    .Sep:hover > a {
+        color: var(--ferrari);
+        transition: var(--animation-btn-nav);
+    }
+
+.active {
+    background: rgba(167, 164, 164, 0.5);
+    border-radius: 0px 10px 10px 0px;
+    margin-left: 16px;
+    pointer-events: none;
+    cursor: default;
+}
+
+    .active > a {
+        margin: 0px auto;
+        color: var(--ferrari);
+    }
+
+
+/* Logo */
+
+.Ind {
+    pointer-events: none;
+    cursor: default;
+}
+
+#logo {
+    background: transparent;
+    position: absolute;
+    top: 85%;
+    left: 0.5vw;
+    width: 9vw;
+    cursor: grab;
+}
+
+
+/* Assin */
+
+.assin {
+    background: transparent;
+    position: absolute;
+    top: 93%;
+    left: 10.5vw;
+}
+
+.assin_text {
+    font-family: var(--text-font-frst);
+    color: var(--ford);
+}
+
+
+/*Cards*/
+
+#card_Holder {
+    position: relative;
+    width: 80%;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+    #card_Holder .card {
+        display: flex;
+        flex-direction: column;
+        background: var(--Camlhanbeque);
+        color: var(--ford);
+        position: relative;
+        margin: 20px 10px;
+        padding: 20px 15px;
+        max-width: 250px;
+        max-height: 300px;
+        font-size: 1.1vw;
+        overflow: hidden;
+        border-radius: 0px 30px 0px 30px;
+        box-shadow: 0px 5px 95px var(--Shadow);
+        transition: var(--animation-card);
+    }
+
+        #card_Holder .card .Img_Holder {
+            position: relative;
+            width: 200px;
+            height: 260px;
+            margin-bottom: 10px;
+            padding: 15px;
+        }
+
+        #card_Holder .card:hover {
+            max-height: 650px;
+            font-size: 1vw;
+        }
+
+#Card_Img {
+    margin: auto;
+    max-width: 100%;
+    border-radius: 0px 30px 0px 30px;
+}
+
+#Card_btn {
+    background-color: var(--ferrari);
+    position: relative;
+    left: 55%;
+    width: 80px;
+    border: var(--Sedaan);
+    box-shadow: 0px 0px 0px var(--Shadow);
+}
+
+    #Card_btn i {
+        color: var(--Sedaan);
+        font-size: 16pt;
+    }
+
+    #Card_btn:hover {
+        box-shadow: 0px 2px 20px var(--Shadow);
+        transition: var(--animation-btn-nav);
+    }
+
+        #Card_btn:hover > #Play {
+            color: var(--ford);
+            transition: var(--animation-card);
+        }
+
+
+/* tab2 */
+#tab2default {
+    width: 90vw;
+    max-width: 800px;
+    margin-left: 10vw;
+}
+
+
+
+    #tab2default .foto1 {
+        background: #ff0505;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        width: 50vw;
+        height: 50vw;
+        max-width: 700px;
+        max-height: 600px;
+        animation: FadeInPices 1s;
+    }
+
+    #tab2default .responsive {
+        width: 100%;
+        height: 100%;
+    }
+
+/* tab3 */
+
+#tab3default {
+    width: 90vw;
+    max-width: 800px;
+    margin-left: 10vw;
+}
+
+    #tab3default .foto1 {
+        background: #37ff05;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        width: 50vw;
+        height: 50vw;
+        max-width: 700px;
+        max-height: 600px;
+        animation: FadeInPices 1s;
+    }
+
+    #tab3default .responsive {
+        width: 100%;
+        height: 100%;
+    }
+
+@media screens and (max-width:790px) {
+
+    #tab2default {
+        width: 90vw;
+        max-width: 450px;
+    }
+
+        #tab2default .foto1 {
+            max-width: 500px;
+            max-height: 600px;
+        }
+}
+
+/* tab4 */
+
+#tab4default {
+    width: 90vw;
+    max-width: 800px;
+    margin-left: 10vw;
+}
+
+    #tab4default .foto1 {
+        background: #37ff05;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        width: 50vw;
+        height: 50vw;
+        max-width: 700px;
+        max-height: 600px;
+        animation: FadeInPices 1s;
+    }
+
+    #tab4default .responsive {
+        width: 100%;
+        height: 100%;
+    }
+
+@media screens and (max-width:790px) {
+
+    #tab2default {
+        width: 90vw;
+        max-width: 450px;
+    }
+
+        #tab2default .foto1 {
+            max-width: 500px;
+            max-height: 600px;
+        }
+}
+
+/* tab5 */
+
+#tab5default {
+    width: 90vw;
+    max-width: 800px;
+    margin-left: 10vw;
+}
+
+    #tab5default .foto1 {
+        background: #37ff05;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        width: 50vw;
+        height: 50vw;
+        max-width: 700px;
+        max-height: 600px;
+        animation: FadeInPices 1s;
+    }
+
+    #tab5default .responsive {
+        width: 100%;
+        height: 100%;
+    }
+
+@media screens and (max-width:790px) {
+
+    #tab2default {
+        width: 90vw;
+        max-width: 450px;
+    }
+
+        #tab2default .foto1 {
+            max-width: 500px;
+            max-height: 600px;
+        }
+}
